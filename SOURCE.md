@@ -15,13 +15,13 @@ Upstream `v1.6.1` then hotfixed fast-mode output: `humanize-monolith` now writes
 
 ## File Mapping
 
-- `.claude/skills/humanize-korean/references/*.md` -> `skills/humanize-korean/references/*.md`
-- `.claude/skills/humanize-korean/references/*.json` -> `skills/humanize-korean/references/*.json`
-- `.claude/skills/humanize-korean/references/*.py` -> `skills/humanize-korean/references/*.py`
-- `.claude/agents/*.md` -> `skills/humanize-korean/references/agents/*.md`
-- `scripts/prepare_monolith_input.py` -> `scripts/prepare_monolith_input.py` with Codex plugin paths adapted
-- `tests/test_metrics.py` -> `tests/test_metrics.py` with Codex plugin paths adapted
-- `assets/social-preview.png` -> `assets/social-preview.png`
+- `.claude/skills/humanize-korean/references/*.md` -> `plugins/im-not-ai/skills/humanize-korean/references/*.md`
+- `.claude/skills/humanize-korean/references/*.json` -> `plugins/im-not-ai/skills/humanize-korean/references/*.json`
+- `.claude/skills/humanize-korean/references/*.py` -> `plugins/im-not-ai/skills/humanize-korean/references/*.py`
+- `.claude/agents/*.md` -> `plugins/im-not-ai/skills/humanize-korean/references/agents/*.md`
+- `scripts/prepare_monolith_input.py` -> `plugins/im-not-ai/scripts/prepare_monolith_input.py` with Codex plugin paths adapted
+- `tests/test_metrics.py` -> `plugins/im-not-ai/tests/test_metrics.py` with Codex plugin paths adapted
+- `assets/social-preview.png` -> `plugins/im-not-ai/assets/social-preview.png`
 - `LICENSE` -> `LICENSE`
 
 ## v1.6.1 Sync Notes
@@ -49,7 +49,8 @@ Codex-specific adaptations:
 
 ## Prior Sync Notes
 
-- `2026-05-02`: upstream `ebe1328` run_id marker-file workflow fix was adapted into `skills/humanize-korean/SKILL.md`.
+- `2026-05-07`: marketplace source path was changed from root `./` to `./plugins/im-not-ai` so Codex CLI 0.128.x can discover the plugin from `/plugins` on Windows and other strict path validators.
+- `2026-05-02`: upstream `ebe1328` run_id marker-file workflow fix was adapted into `plugins/im-not-ai/skills/humanize-korean/SKILL.md`.
 - `2026-04-29`: upstream README community-port links from PR #12 and PR #15 were reflected while preserving Squirbie owner links.
 - `v1.5.0`: the Codex port adopted the monolith fast path, `quick-rules.md`, and `humanize-monolith.md`, and removed the v1.2-v1.4 hot-path reference files that upstream removed.
 

@@ -11,6 +11,19 @@ Codex 포트 변경:
 - Fast mode에서 `summary.md`를 새로 쓰지 않고, `final.md` 끝의 `<!-- HUMANIZE-SUMMARY -->` HTML 주석 블록에 메트릭·등급·자체검증·하이라이트를 넣도록 Codex skill workflow를 갱신.
 - `SOURCE.md`, README, PUBLISH 문서를 upstream `v1.6.1` 릴리스와 PR #18 기준으로 갱신.
 
+## 2026-05-07 — Marketplace path compatibility fix
+
+Codex 포트 변경:
+
+- Plugin payload를 repo root에서 `plugins/im-not-ai/`로 이동.
+- `.agents/plugins/marketplace.json`의 local source path를 `"./"`에서 `"./plugins/im-not-ai"`로 변경.
+- Codex CLI 0.128.x에서 root local plugin path가 `/plugins` 목록에 나타나지 않는 문제를 피하도록 README, SOURCE, PUBLISH 경로 설명을 갱신.
+
+관련 이슈:
+
+- https://github.com/Squirbie/im-not-ai-codex/issues/1
+- https://github.com/openai/codex/issues/17066
+
 원본 기준:
 
 - Original repo: https://github.com/epoko77-ai/im-not-ai
@@ -27,8 +40,8 @@ v1.6 5편 일괄 검증 중 fast-mode sub-agent가 두 번째 Write(`summary.md`
 Codex 포트 변경:
 
 - `baseline.json`과 `metrics.py`를 Codex reference 파일로 추가.
-- `scripts/prepare_monolith_input.py`를 Codex plugin layout에 맞게 조정해 `skills/humanize-korean/references/metrics.py`를 사용하도록 변경.
-- upstream `tests/test_metrics.py`를 Codex path 기준으로 조정.
+- `plugins/im-not-ai/scripts/prepare_monolith_input.py`를 Codex plugin layout에 맞게 조정해 `plugins/im-not-ai/skills/humanize-korean/references/metrics.py`를 사용하도록 변경.
+- upstream `tests/test_metrics.py`를 `plugins/im-not-ai/tests/test_metrics.py`로 옮기고 Codex path 기준으로 조정.
 - `quick-rules.md`, `ai-tell-taxonomy.md`, role prompt를 upstream v1.6 기준으로 동기화.
 - Codex skill fast workflow에 metrics pre-processing, `00_metrics.json`, `01_input_with_metrics.txt`, graceful-degrade 규칙을 추가.
 
@@ -46,7 +59,7 @@ KatFish(Park et al.)와 LREAD 정량 연구를 반영해 한국어 AI 티의 쉼
 Codex 포트 변경:
 
 - SOURCE의 upstream sync commit을 `ebe1328`로 갱신.
-- `skills/humanize-korean/SKILL.md`에 upstream run_id 시퀀스 fix를 반영.
+- `plugins/im-not-ai/skills/humanize-korean/SKILL.md`에 upstream run_id 시퀀스 fix를 반영.
 - 기존 run 탐색을 `_workspace/YYYY-MM-DD-*/01_input.txt` 표지 파일 기준으로 하도록 명시.
 - Plugin version은 `v1.5.1` 유지. 원본 version label, release, tag 변경 없음.
 

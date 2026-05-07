@@ -8,7 +8,7 @@
       "name": "im-not-ai-codex",
       "source": {
         "source": "local",
-        "path": "./"
+        "path": "./plugins/im-not-ai"
       },
       "policy": {
         "installation": "AVAILABLE",

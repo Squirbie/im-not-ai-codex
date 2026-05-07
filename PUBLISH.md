@@ -47,6 +47,8 @@ Codex를 재시작하고 Plugins 화면에서 `im-not-ai Codex`를 선택한 뒤
 codex plugin marketplace add /absolute/path/to/im-not-ai-codex
 ```
 
+Marketplace manifest는 `plugins/im-not-ai`를 plugin source로 가리킵니다. Codex CLI 0.128.x에서는 repo root `./`를 plugin source로 쓰면 `/plugins` 목록에서 보이지 않을 수 있으므로, plugin payload는 이 하위 폴더 안에 둡니다.
+
 ## 4. Smoke Test
 
 새 Codex 세션에서 이렇게 테스트합니다.
